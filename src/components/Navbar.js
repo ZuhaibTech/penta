@@ -13,8 +13,8 @@ export default function Navbar() {
     { name: "CLOUD SOLUTIONS", href: "/CloudSolutions" },,
     { name: "WEB DEVELOPMENT", href: "/web-dev" },
     { name: "CONSULTING AND TRAINING", href: "/consulting" },
-    { name: "DIGITAL MARKETING", href: "/services/digital-marketing" },
-    { name: "APP DEVELOPMENT", href: "/services/app-dev" },
+    { name: "DIGITAL MARKETING", href: "/digital" },
+    { name: "APP DEVELOPMENT", href: "/appdevelopment" },
     { name: "DATA MIGRATION", href: "/services/data-migration" },
   ];
 
