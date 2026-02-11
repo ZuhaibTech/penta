@@ -2,12 +2,12 @@ import React from 'react';
 
 export default function DigitalServices() {
   const marketingServices = [
-    { title: "Search Engine Optimization", desc: "Rank higher on Google and drive organic traffic to your website." },
-    { title: "Social Media Management", desc: "Build a community and engage your audience across all social platforms." },
-    { title: "Pay-Per-Click Advertising", desc: "Get instant results with highly targeted Google and Meta ad campaigns." },
-    { title: "Content Marketing", desc: "Establish authority with high-quality blogs, videos, and infographics." },
-    { title: "Email Marketing", desc: "Nurture leads and drive repeat sales with automated email journeys." },
-    { title: "Analytics & Reporting", desc: "Make informed decisions with deep data insights and transparent tracking." }
+    { title: "SEO & SEM Strategies", desc: "Increase your online visibility with our data-driven SEO and SEM strategies, designed to attract targeted traffic and boost conversion rates for sustainable growth." },
+    { title: "Social Media Management", desc: "Engage your audience effectively with our comprehensive social media management services, tailored to enhance brand presence and foster meaningful connections." },
+    { title: "Content Marketing", desc: "Drive engagement and establish authority with our content marketing services, creating valuable, relevant content that resonates with your target audience." },
+    { title: "Email Marketing Campaigns", desc: "Maximize customer retention with our tailored email marketing campaigns, delivering personalized messages that nurture leads and drive conversions." },
+    { title: "PPC Advertising", desc: "Achieve immediate visibility and traffic with our expertly managed PPC advertising campaigns, optimizing budgets for maximum ROI and targeted reach." },
+    { title: "Analytics & Reporting", desc: "Make informed decisions with our analytics and reporting services, providing actionable insights that enhance your marketing strategies and overall business performance." }
   ];
 
   return (
@@ -22,10 +22,10 @@ export default function DigitalServices() {
             <span className="text-xs font-bold uppercase tracking-widest text-slate-400 ml-2">Overview</span>
           </div>
           <h2 className="text-3xl md:text-5xl font-black text-slate-900 leading-tight">
-            We don't just run ads; we build digital legacies.
+            We help you connect with your audience, enhance engagement, and achieve measurable results in a digital-first world.
           </h2>
           <p className="text-sm md:text-lg text-slate-600 leading-relaxed">
-            Our comprehensive digital marketing approach ensures your brand is seen, heard, and remembered by the right audience at the right time.
+            Pentacloud ensuring seamless operations and enhanced user adoption for sustainable business growth in today’s competitive landscape. 
           </p>
           
           <div className="pt-8 hidden md:block">

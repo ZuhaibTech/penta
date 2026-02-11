@@ -10,12 +10,12 @@ export default function Navbar() {
 
   const serviceList = [
     { name: "SALESFORCE CONSULTING", href: "/Services/salesforce" },
-    { name: "CLOUD SOLUTIONS", href: "/CloudSolutions" },,
+    { name: "CLOUD SOLUTIONS", href: "/CloudSolutions" },
     { name: "WEB DEVELOPMENT", href: "/web-dev" },
     { name: "CONSULTING AND TRAINING", href: "/consulting" },
     { name: "DIGITAL MARKETING", href: "/digital" },
     { name: "APP DEVELOPMENT", href: "/appdevelopment" },
-    { name: "DATA MIGRATION", href: "/services/data-migration" },
+    { name: "DATA MIGRATION", href: "/data-migration" },
   ];
 
   return (
@@ -88,7 +88,7 @@ export default function Navbar() {
             Blogs
           </Link>
           <Link
-            href="/#contact"
+            href="/contactus"
             className="px-4 py-2 rounded-xl text-lg font-bold text-slate-900 hover:bg-white/50 hover:text-[#0081c2] transition-all"
           >
             Contact
@@ -98,7 +98,7 @@ export default function Navbar() {
         {/* Desktop Button & Mobile Toggle */}
         <div className="flex items-center gap-4">
           <Link
-            href="/#contact"
+            href="/contactus"
             className="hidden md:block bg-[#0081c2] hover:bg-[#006da3] text-white font-semibold px-6 py-2 rounded-full transition-all shadow-sm active:scale-95"
           >
             Get in touch
@@ -175,7 +175,7 @@ export default function Navbar() {
             Blogs
           </Link>
           <Link
-            href="/#contact"
+            href="/contactus"
             onClick={() => setIsMenuOpen(false)}
             className="text-xl font-bold text-slate-900"
           >
@@ -185,7 +185,7 @@ export default function Navbar() {
           {/* Added Get in Touch Button for Mobile */}
           <div className="pt-6 border-t border-slate-50">
             <Link
-              href="/#contact"
+              href="/contactus"
               onClick={() => setIsMenuOpen(false)}
               className="block w-full bg-[#0081c2] hover:bg-[#006da3] text-white text-center font-bold px-6 py-4 rounded-xl shadow-lg active:scale-95 transition-transform"
             >

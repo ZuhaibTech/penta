@@ -14,8 +14,7 @@ export default function DigitalHero() {
           </h1>
           
           <p className="text-sm md:text-xl text-slate-600 leading-relaxed max-w-xl mx-auto md:mx-0 font-medium">
-            Elevate your brand's digital presence with data-driven strategies, 
-            creative storytelling, and performance marketing that delivers real growth.
+            Elevate your brand visibility with our comprehensive digital marketing services, including data-driven strategies and creative campaigns.
           </p>
           
           <div className="pt-4">
