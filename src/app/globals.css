@@ -46,3 +46,12 @@
 .animate-marquee-reverse:hover {
   animation-play-state: paused;
 }
+
+
+/* Removes browser-specific video hover controls */
+video::-webkit-media-controls-picture-in-picture-button,
+video::-webkit-media-controls-enclosed-content-controls-container,
+video::-webkit-media-controls-panel {
+    display: none !important;
+    -webkit-appearance: none;
+}

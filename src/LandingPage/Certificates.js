@@ -4,7 +4,6 @@ import React, { useState, useEffect } from "react";
 export default function Certificates() {
   const [mounted, setMounted] = useState(false);
 
-  // UseEffect ensures this code only runs on the client-side
   useEffect(() => {
     setMounted(true);
   }, []);
@@ -28,6 +27,7 @@ export default function Certificates() {
     { id: 16, title: "B2C Commerce Developer", org: "Salesforce" },
   ];
 
+  // Split logic for Desktop
   const firstRow = certs.slice(0, 8);
   const secondRow = certs.slice(8, 16);
 
@@ -35,24 +35,20 @@ export default function Certificates() {
     <div className="flex-shrink-0 w-32 h-20 md:w-72 md:h-40 bg-white border border-slate-100 rounded-lg md:rounded-2xl p-2.5 md:p-6 shadow-sm hover:shadow-xl hover:border-[#38bdf8]/50 transition-all duration-500 flex flex-col justify-between hover:-translate-y-1 md:hover:-translate-y-2 cursor-pointer mx-1.5 md:mx-4 group relative overflow-hidden">
       <div className="absolute -right-3 -bottom-3 w-6 h-6 md:w-16 md:h-16 bg-sky-50 rounded-full group-hover:scale-[5] transition-transform duration-700 -z-10" />
       
-      <div>
-        <div className="w-3 h-0.5 md:w-8 md:h-1 bg-[#38bdf8] mb-1 md:mb-3 rounded-full" />
-        <h3 className="text-[9px] md:text-md font-bold text-slate-800 leading-tight group-hover:text-[#0284c7] line-clamp-2">
+      <div className="flex flex-col gap-1">
+        <div className="w-3 h-0.5 md:w-8 md:h-1 bg-[#38bdf8] mb-1 md:mb-3 rounded-full shrink-0" />
+        <h3 className="text-[9px] md:text-md font-bold text-slate-800 leading-[1.1] md:leading-tight group-hover:text-[#0284c7] whitespace-normal break-words">
           {cert.title}
         </h3>
       </div>
       
-      <span className="text-[6px] md:text-[10px] font-black text-slate-400 uppercase tracking-wider">
+      <span className="text-[6px] md:text-[10px] font-black text-slate-400 uppercase tracking-tighter md:tracking-wider">
         {cert.org}
       </span>
     </div>
   );
 
-  // FIX: Hydration Error Prevention
-  // We return a simple spacer or null until mounted to ensure SSR matches Client
-  if (!mounted) {
-    return <div className="py-10 md:py-24 bg-white min-h-[400px]" />;
-  }
+  if (!mounted) return <div className="py-10 bg-white min-h-[400px]" />;
 
   return (
     <section className="py-10 md:py-24 bg-white overflow-hidden">
@@ -67,27 +63,39 @@ export default function Certificates() {
         </div>
       </div>
 
-      <div className="flex flex-col gap-3 md:gap-8">
+      {/* MOBILE VIEW: Single Row (Shown only on small screens) */}
+      <div className="flex md:hidden overflow-hidden relative">
+        <div className="flex animate-marquee whitespace-nowrap py-2">
+          {[...certs, ...certs].map((cert, i) => (
+            <CertificateBox key={`mobile-${i}`} cert={cert} />
+          ))}
+        </div>
+        <div className="absolute inset-y-0 left-0 w-8 bg-gradient-to-r from-white to-transparent z-10" />
+        <div className="absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-white to-transparent z-10" />
+      </div>
+
+      {/* DESKTOP VIEW: Two Rows (Hidden on mobile, flex on md+) */}
+      <div className="hidden md:flex flex-col gap-8">
         {/* Row 1 */}
         <div className="flex overflow-hidden relative">
-          <div className="flex animate-marquee whitespace-nowrap">
+          <div className="flex animate-marquee whitespace-nowrap py-2">
             {[...firstRow, ...firstRow].map((cert, i) => (
-              <CertificateBox key={`row1-${i}-${cert.id}`} cert={cert} />
+              <CertificateBox key={`row1-${i}`} cert={cert} />
             ))}
           </div>
-          <div className="absolute inset-y-0 left-0 w-8 md:w-32 bg-gradient-to-r from-white to-transparent z-10" />
-          <div className="absolute inset-y-0 right-0 w-8 md:w-32 bg-gradient-to-l from-white to-transparent z-10" />
+          <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-white to-transparent z-10" />
+          <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-white to-transparent z-10" />
         </div>
 
         {/* Row 2 */}
         <div className="flex overflow-hidden relative">
-          <div className="flex animate-marquee-reverse whitespace-nowrap">
+          <div className="flex animate-marquee-reverse whitespace-nowrap py-2">
             {[...secondRow, ...secondRow].map((cert, i) => (
-              <CertificateBox key={`row2-${i}-${cert.id}`} cert={cert} />
+              <CertificateBox key={`row2-${i}`} cert={cert} />
             ))}
           </div>
-          <div className="absolute inset-y-0 left-0 w-8 md:w-32 bg-gradient-to-r from-white to-transparent z-10" />
-          <div className="absolute inset-y-0 right-0 w-8 md:w-32 bg-gradient-to-l from-white to-transparent z-10" />
+          <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-white to-transparent z-10" />
+          <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-white to-transparent z-10" />
         </div>
       </div>
     </section>

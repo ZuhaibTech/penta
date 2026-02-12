@@ -47,7 +47,7 @@ export default function GlobalImpact() {
             </span>
           </h1>
           
-          <p className="text-blue-100/70 max-w-2xl text-lg md:text-xl leading-relaxed mb-16 font-light">
+          <p className="text-white/90 max-w-2xl text-lg md:text-xl leading-relaxed mb-16 font-medium drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]">
             We bridge the gap between complex cloud infrastructure and 
             seamless business growth on a global scale.
           </p>
