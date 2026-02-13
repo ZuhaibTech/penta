@@ -1,13 +1,47 @@
 import React from 'react';
+// 1. Import the specific icons from lucide-react
+import { 
+  Cloud, 
+  Globe, 
+  Handshake, 
+  Megaphone, 
+  Smartphone, 
+  Database 
+} from 'lucide-react';
 
 export default function GlobalServicesGrid() {
+  // 2. Map icons to the service data
   const services = [
-    { title: "Salesforce Consulting", desc: "Unlock the full potential of your Salesforce investment with tailored consulting services.", icon: "☁️" },
-    { title: "Web Development", desc: "Transform your digital presence with Pentacloud innovative web development solutions.", icon: "🌐" },
-    { title: "Consulting and Training", desc: "Aligning workforce skills with Pentacloud strategic goals for impactful results in the Job market.", icon: "🤝" },
-    { title: "Digital Marketing", desc: "Boost your brand visibility with our strategic digital marketing and creative campaigns.", icon: "📢" },
-    { title: "App Development", desc: "Transform your app ideas into reality with our intuitive, high-performance development services.", icon: "📱" },
-    { title: "Data Migration", desc: "Effortlessly migrate data with Pentacloud focusing on integrity, security, and compliance.", icon: "💾" }
+    { 
+      title: "Salesforce Consulting", 
+      desc: "Unlock the full potential of your Salesforce investment with tailored consulting services.", 
+      icon: <Cloud className="w-5 h-5 md:w-8 md:h-8 text-[#0284c7]" /> 
+    },
+    { 
+      title: "Web Development", 
+      desc: "Transform your digital presence with Pentacloud innovative web development solutions.", 
+      icon: <Globe className="w-5 h-5 md:w-8 md:h-8 text-[#0284c7]" /> 
+    },
+    { 
+      title: "Consulting and Training", 
+      desc: "Aligning workforce skills with Pentacloud strategic goals for impactful results in the Job market.", 
+      icon: <Handshake className="w-5 h-5 md:w-8 md:h-8 text-[#0284c7]" /> 
+    },
+    { 
+      title: "Digital Marketing", 
+      desc: "Boost your brand visibility with our strategic digital marketing and creative campaigns.", 
+      icon: <Megaphone className="w-5 h-5 md:w-8 md:h-8 text-[#0284c7]" /> 
+    },
+    { 
+      title: "App Development", 
+      desc: "Transform your app ideas into reality with our intuitive, high-performance development services.", 
+      icon: <Smartphone className="w-5 h-5 md:w-8 md:h-8 text-[#0284c7]" /> 
+    },
+    { 
+      title: "Data Migration", 
+      desc: "Effortlessly migrate data with Pentacloud focusing on integrity, security, and compliance.", 
+      icon: <Database className="w-5 h-5 md:w-8 md:h-8 text-[#0284c7]" /> 
+    }
   ];
 
   return (
@@ -29,7 +63,7 @@ export default function GlobalServicesGrid() {
               className="bg-slate-50 border border-slate-100 p-5 md:p-10 rounded-2xl md:rounded-[2.5rem] flex items-start gap-4 md:gap-6 hover:bg-white hover:shadow-xl hover:border-blue-200 transition-all group"
             >
               {/* Icon Container - Smaller on Mobile */}
-              <div className="w-10 h-10 md:w-16 md:h-16 rounded-full bg-white shadow-sm flex-shrink-0 flex items-center justify-center text-xl md:text-3xl group-hover:scale-110 transition-transform">
+              <div className="w-10 h-10 md:w-16 md:h-16 rounded-full bg-white shadow-sm flex-shrink-0 flex items-center justify-center group-hover:scale-110 group-hover:bg-sky-50 transition-all duration-300">
                 {service.icon}
               </div>
               
@@ -38,8 +72,8 @@ export default function GlobalServicesGrid() {
                 <h3 className="text-slate-900 text-base md:text-xl font-extrabold mb-1 md:mb-3 group-hover:text-[#0284c7] transition-colors">
                   {service.title}
                 </h3>
-                {/* Description - Scaled for Mobile */}
-                <p className="text-slate-500 text-[11px] md:text-sm leading-relaxed">
+                {/* Description - Updated to text-sm for better accessibility */}
+                <p className="text-slate-500 text-sm leading-relaxed">
                   {service.desc}
                 </p>
               </div>

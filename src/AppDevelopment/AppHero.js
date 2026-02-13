@@ -1,4 +1,6 @@
 import React from 'react';
+// 1. Import the icon
+import { ArrowRight } from 'lucide-react';
 
 export default function AppHero() {
   return (
@@ -16,10 +18,7 @@ export default function AppHero() {
         {/* RIGHT SIDE (VIDEO): Second in order on mobile, Second in order on desktop */}
         <div className="flex-1 w-full order-2 md:order-2 px-2 md:px-0">
           <div className="relative mx-auto max-w-[550px] md:max-w-none">
-            {/* The Outer Wrapper: Thin border and deep shadow */}
             <div className="relative rounded-[1.5rem] md:rounded-[2.5rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] bg-white pointer-events-none border border-slate-100 p-1 md:p-1.5">
-              
-              {/* The Inner Wrapper: Nested curve logic */}
               <div className="w-full h-full rounded-[1.2rem] md:rounded-[2.2rem] overflow-hidden aspect-video">
                 <video 
                   src="/App-Dev.mp4" 
@@ -48,10 +47,13 @@ export default function AppHero() {
             We specialize in creating intuitive, high-performance applications that enhance user experiences and meet the evolving needs of businesses in a competitive marketplace.
           </p>
           
-          <button className="group relative bg-sky-100 text-[#0284c7] px-8 py-4 rounded-xl font-bold text-xs md:text-sm flex items-center gap-2 mx-auto md:mx-0 transition-all duration-300 hover:bg-[#0284c7] hover:text-white shadow-md active:scale-95">
-            Speak to Our Expert 
-            <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
-          </button>
+          {/* THEMED BUTTON: Solid Blue to Light Blue + Animated Arrow */}
+          <div className="pt-2">
+            <button className="group w-full md:w-auto bg-[#0284c7] text-white px-8 py-4 rounded-xl font-bold text-sm md:text-lg flex items-center justify-center gap-3 hover:bg-[#e0f2fe] hover:text-[#0284c7] transition-all duration-300 shadow-md active:scale-95 uppercase tracking-wider">
+              Speak to Our Expert 
+              <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-2" />
+            </button>
+          </div>
         </div>
 
       </div>

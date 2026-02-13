@@ -1,6 +1,8 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+// 1. Import Lucide icons
+import { CloudUpload, Bot, UserCheck } from "lucide-react";
 
 export default function HeroSection() {
   const [text, setText] = useState("");
@@ -62,7 +64,7 @@ export default function HeroSection() {
         {/* RIGHT CONTENT */}
         <div className="relative flex flex-col items-center order-2 mt-8 lg:mt-0">
           
-          {/* Curved Video Container - pointer-events-none stops the PiP popup */}
+          {/* Curved Video Container */}
           <div className="relative z-10 w-full max-w-[400px] md:max-w-[460px] overflow-hidden rounded-[2rem] md:rounded-[3rem] shadow-2xl border-4 border-white pointer-events-none">
             <video 
               autoPlay 
@@ -77,13 +79,13 @@ export default function HeroSection() {
             </video>
           </div>
 
-          {/* Feature Badges - Shifted closer to the video */}
+          {/* Feature Badges - Now with Lucide Icons */}
           <div className="w-full max-w-[500px] mt-8 md:mt-12 grid grid-cols-3 gap-2 pointer-events-none">
              
              {/* Cloud Migration */}
              <div className="flex flex-col items-center">
-                <div className="bg-white p-3 rounded-full shadow-lg border border-sky-50 mb-2 hover:scale-110 transition-transform pointer-events-auto">
-                  <span className="text-lg md:text-xl">☁️</span>
+                <div className="bg-white p-3 rounded-full shadow-lg border border-sky-50 mb-2 hover:scale-110 transition-transform pointer-events-auto flex items-center justify-center">
+                  <CloudUpload className="w-5 h-5 md:w-6 md:h-6 text-[#0284c7]" strokeWidth={2.5} />
                 </div>
                 <p className="text-[8px] md:text-[10px] font-black text-slate-800 text-center leading-tight uppercase">
                   Cloud Migration<br/>
@@ -93,8 +95,8 @@ export default function HeroSection() {
 
              {/* AI Implementation */}
              <div className="flex flex-col items-center translate-y-3 md:translate-y-5">
-                <div className="bg-white p-3 rounded-full shadow-lg border border-sky-50 mb-2 hover:scale-110 transition-transform pointer-events-auto">
-                  <span className="text-lg md:text-xl">🤖</span>
+                <div className="bg-white p-3 rounded-full shadow-lg border border-sky-50 mb-2 hover:scale-110 transition-transform pointer-events-auto flex items-center justify-center">
+                  <Bot className="w-5 h-5 md:w-6 md:h-6 text-[#0284c7]" strokeWidth={2.5} />
                 </div>
                 <p className="text-[8px] md:text-[10px] font-black text-slate-800 text-center leading-tight uppercase">
                   AI Implementation<br/>
@@ -104,8 +106,8 @@ export default function HeroSection() {
 
              {/* Human-Centric */}
              <div className="flex flex-col items-center">
-                <div className="bg-white p-3 rounded-full shadow-lg border border-sky-50 mb-2 hover:scale-110 transition-transform pointer-events-auto">
-                  <span className="text-lg md:text-xl">⚙️</span>
+                <div className="bg-white p-3 rounded-full shadow-lg border border-sky-50 mb-2 hover:scale-110 transition-transform pointer-events-auto flex items-center justify-center">
+                  <UserCheck className="w-5 h-5 md:w-6 md:h-6 text-[#0284c7]" strokeWidth={2.5} />
                 </div>
                 <p className="text-[8px] md:text-[10px] font-black text-slate-800 text-center leading-tight uppercase">
                    Human-Centric<br/>

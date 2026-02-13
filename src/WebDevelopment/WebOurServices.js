@@ -1,36 +1,46 @@
 import React from 'react';
+// 1. Import Lucide icons
+import { 
+  Cloud, 
+  Code2, 
+  Handshake, 
+  Megaphone, 
+  Smartphone, 
+  RefreshCcw, 
+  ArrowRight 
+} from 'lucide-react';
 
 export default function WebOurServices() {
   const ourServices = [
     {
       title: "Salesforce Consulting",
       desc: "Unlock the full potential of your Salesforce investment with tailored consulting services.",
-      icon: "💻"
+      icon: Cloud
     },
     {
       title: "Web Development",
       desc: "Transform your digital presence with Pentacloud innovative web development solutions.",
-      icon: "💻"
+      icon: Code2
     },
     {
       title: "Consulting and Training",
       desc: "Aligning workforce skills with Pentacloud strategic goals for impactful results in the Job market.",
-      icon: "⚙️"
+      icon: Handshake
     },
     {
       title: "Digital Marketing",
       desc: "Boost your brand visibility with our strategic digital marketing and creative campaigns.",
-      icon: "🚀"
+      icon: Megaphone
     },
     {
       title: "App Development",
       desc: "Transform your app ideas into reality with our intuitive, high-performance development services.",
-      icon: "🎨"
+      icon: Smartphone
     },
     {
       title: "Data Migration",
       desc: "Effortlessly migrate data with Pentacloud focusing on integrity, security, and compliance.",
-      icon: "⚡"
+      icon: RefreshCcw
     }
   ];
 
@@ -54,7 +64,7 @@ export default function WebOurServices() {
           </p>
         </div>
 
-        {/* 6-Box Grid: grid-cols-2 for mobile to keep them small and side-by-side */}
+        {/* 6-Box Grid */}
         <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-8">
           {ourServices.map((service, i) => (
             <div 
@@ -65,24 +75,24 @@ export default function WebOurServices() {
               <div className="absolute -right-4 -top-4 w-12 h-12 md:w-24 md:h-24 bg-sky-50 rounded-full scale-0 group-hover:scale-150 transition-transform duration-500 -z-0" />
               
               <div className="relative z-10">
-                {/* Icon: Smaller on mobile */}
-                <div className="w-10 h-10 md:w-14 md:h-14 bg-slate-50 rounded-xl md:rounded-2xl flex items-center justify-center text-xl md:text-2xl mb-3 md:mb-6 group-hover:bg-[#0284c7] transition-colors duration-300">
-                  <span className="group-hover:scale-110 transition-transform">{service.icon}</span>
+                {/* Icon Container */}
+                <div className="w-10 h-10 md:w-14 md:h-14 bg-slate-50 rounded-xl md:rounded-2xl flex items-center justify-center mb-3 md:mb-6 group-hover:bg-[#0284c7] transition-colors duration-300">
+                  <service.icon 
+                    className="w-5 h-5 md:w-7 md:h-7 text-[#0284c7] group-hover:text-white group-hover:scale-110 transition-all duration-300" 
+                    strokeWidth={2}
+                  />
                 </div>
                 
-                {/* Title: Smaller and tight on mobile */}
                 <h3 className="text-[12px] md:text-xl font-black text-slate-900 mb-1.5 md:mb-3 group-hover:text-[#0284c7] transition-colors leading-tight">
                   {service.title}
                 </h3>
                 
-                {/* Description: 2-line clamp on mobile to keep boxes uniform */}
                 <p className="text-[9px] md:text-[13px] text-slate-500 leading-snug md:leading-relaxed line-clamp-3 md:line-clamp-none">
                   {service.desc}
                 </p>
                 
-                {/* Link: Hidden on small mobile to save space, or kept very small */}
                 <div className="mt-3 md:mt-6 flex items-center gap-1.5 text-[#0284c7] font-bold text-[8px] md:text-[10px] uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity">
-                  View <span>→</span>
+                  View <ArrowRight size={12} className="md:w-3 md:h-3" />
                 </div>
               </div>
             </div>

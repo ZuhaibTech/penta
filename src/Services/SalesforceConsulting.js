@@ -1,9 +1,11 @@
 import React from 'react';
 import Image from 'next/image';
+// 1. Import the icon
+import { ArrowRight } from 'lucide-react';
 
 export default function SalesforceConsulting() {
   return (
-    <section className="pt-24 pb-12 md:pt-32 md:pb-20 px-6 bg-white text-slate-900">
+    <section className="pt-24 pb-12 md:pt-32 md:pb-20 px-6 bg-white text-slate-900 overflow-hidden">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-8 md:gap-12">
         
         {/* MOBILE HEADER (Only visible on mobile) */}
@@ -14,7 +16,7 @@ export default function SalesforceConsulting() {
           </h1>
         </div>
 
-        {/* IMAGE - Becomes Order 2 on mobile, Order 2 on desktop */}
+        {/* IMAGE */}
         <div className="flex-1 w-full order-2 md:order-2">
           <div className="relative w-full h-[250px] md:h-[450px]">
             <Image 
@@ -27,9 +29,9 @@ export default function SalesforceConsulting() {
           </div>
         </div>
 
-        {/* TEXT CONTENT - Paragraph & Button (Order 3 on mobile) */}
+        {/* TEXT CONTENT */}
         <div className="flex-1 space-y-4 md:space-y-8 text-center md:text-left order-3 md:order-1">
-          {/* Desktop Header (Hidden on mobile) */}
+          {/* Desktop Header */}
           <h1 className="hidden md:block text-3xl md:text-7xl font-black leading-tight text-slate-900">
             Salesforce <br /> 
             <span className="text-[#0284c7]">Consulting</span>
@@ -40,9 +42,11 @@ export default function SalesforceConsulting() {
             consulting services, expert integrations, and comprehensive training programs.
           </p>
           
+          {/* THEMED BUTTON: Blue to Light Blue + Sliding Arrow */}
           <div className="pt-2">
-            <button className="w-full md:w-auto bg-[#0284c7] text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold text-base md:text-lg flex items-center justify-center gap-3 hover:bg-[#0ea5e9] transition-all shadow-lg shadow-blue-100">
-              Speak to Our Expert <span>→</span>
+            <button className="group w-full md:w-auto bg-[#0284c7] text-white px-8 py-4 rounded-xl font-bold text-sm md:text-lg flex items-center justify-center gap-3 hover:bg-[#e0f2fe] hover:text-[#0284c7] transition-all duration-300 shadow-md active:scale-95">
+              Speak to Our Expert 
+              <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-2" />
             </button>
           </div>
         </div>
