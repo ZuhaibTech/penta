@@ -1,7 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
-// 1. Import Lucide icons
 import { CloudUpload, Bot, UserCheck } from "lucide-react";
 
 export default function HeroSection() {
@@ -79,13 +78,13 @@ export default function HeroSection() {
             </video>
           </div>
 
-          {/* Feature Badges - Now with Lucide Icons */}
+          {/* Feature Badges - ANIMATED */}
           <div className="w-full max-w-[500px] mt-8 md:mt-12 grid grid-cols-3 gap-2 pointer-events-none">
-             
-             {/* Cloud Migration */}
-             <div className="flex flex-col items-center">
-                <div className="bg-white p-3 rounded-full shadow-lg border border-sky-50 mb-2 hover:scale-110 transition-transform pointer-events-auto flex items-center justify-center">
-                  <CloudUpload className="w-5 h-5 md:w-6 md:h-6 text-[#0284c7]" strokeWidth={2.5} />
+              
+             {/* Cloud Migration - Float with no delay */}
+             <div className="flex flex-col items-center animate-float">
+                <div className="bg-white p-3 rounded-full shadow-lg border border-sky-50 mb-2 hover:scale-125 hover:rotate-12 transition-all duration-300 pointer-events-auto flex items-center justify-center group">
+                  <CloudUpload className="w-5 h-5 md:w-6 md:h-6 text-[#0284c7] group-hover:text-[#38bdf8]" strokeWidth={2.5} />
                 </div>
                 <p className="text-[8px] md:text-[10px] font-black text-slate-800 text-center leading-tight uppercase">
                   Cloud Migration<br/>
@@ -93,10 +92,10 @@ export default function HeroSection() {
                 </p>
              </div>
 
-             {/* AI Implementation */}
-             <div className="flex flex-col items-center translate-y-3 md:translate-y-5">
-                <div className="bg-white p-3 rounded-full shadow-lg border border-sky-50 mb-2 hover:scale-110 transition-transform pointer-events-auto flex items-center justify-center">
-                  <Bot className="w-5 h-5 md:w-6 md:h-6 text-[#0284c7]" strokeWidth={2.5} />
+             {/* AI Implementation - Float with delay and lower position */}
+             <div className="flex flex-col items-center translate-y-3 md:translate-y-5 animate-float [animation-delay:0.5s]">
+                <div className="bg-white p-3 rounded-full shadow-lg border border-sky-50 mb-2 hover:scale-125 hover:-rotate-12 transition-all duration-300 pointer-events-auto flex items-center justify-center group">
+                  <Bot className="w-5 h-5 md:w-6 md:h-6 text-[#0284c7] group-hover:text-[#38bdf8]" strokeWidth={2.5} />
                 </div>
                 <p className="text-[8px] md:text-[10px] font-black text-slate-800 text-center leading-tight uppercase">
                   AI Implementation<br/>
@@ -104,14 +103,14 @@ export default function HeroSection() {
                 </p>
              </div>
 
-             {/* Human-Centric */}
-             <div className="flex flex-col items-center">
-                <div className="bg-white p-3 rounded-full shadow-lg border border-sky-50 mb-2 hover:scale-110 transition-transform pointer-events-auto flex items-center justify-center">
-                  <UserCheck className="w-5 h-5 md:w-6 md:h-6 text-[#0284c7]" strokeWidth={2.5} />
+             {/* Human-Centric - Float with delay */}
+             <div className="flex flex-col items-center animate-float [animation-delay:1s]">
+                <div className="bg-white p-3 rounded-full shadow-lg border border-sky-50 mb-2 hover:scale-125 hover:rotate-12 transition-all duration-300 pointer-events-auto flex items-center justify-center group">
+                  <UserCheck className="w-5 h-5 md:w-6 md:h-6 text-[#0284c7] group-hover:text-[#38bdf8]" strokeWidth={2.5} />
                 </div>
                 <p className="text-[8px] md:text-[10px] font-black text-slate-800 text-center leading-tight uppercase">
-                   Human-Centric<br/>
-                   <span className="text-slate-400 font-bold lowercase block">user focused</span>
+                    Human-Centric<br/>
+                    <span className="text-slate-400 font-bold lowercase block">user focused</span>
                 </p>
              </div>
 
@@ -119,7 +118,6 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* Background Glows */}
       <div className="absolute top-[-5%] right-[-5%] w-[400px] h-[400px] bg-sky-100/40 rounded-full blur-[100px] -z-10" />
       <div className="absolute bottom-[-5%] left-[-5%] w-[400px] h-[400px] bg-blue-50/40 rounded-full blur-[100px] -z-10" />
     </section>

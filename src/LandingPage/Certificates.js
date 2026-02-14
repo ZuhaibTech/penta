@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import { Award } from "lucide-react"; // Import Lucide Icon
 
 export default function Certificates() {
   const [mounted, setMounted] = useState(false);
@@ -27,22 +28,29 @@ export default function Certificates() {
     { id: 16, title: "B2C Commerce Developer", org: "Salesforce" },
   ];
 
-  // Split logic for Desktop
   const firstRow = certs.slice(0, 8);
   const secondRow = certs.slice(8, 16);
 
   const CertificateBox = ({ cert }) => (
-    <div className="flex-shrink-0 w-32 h-20 md:w-72 md:h-40 bg-white border border-slate-100 rounded-lg md:rounded-2xl p-2.5 md:p-6 shadow-sm hover:shadow-xl hover:border-[#38bdf8]/50 transition-all duration-500 flex flex-col justify-between hover:-translate-y-1 md:hover:-translate-y-2 cursor-pointer mx-1.5 md:mx-4 group relative overflow-hidden">
-      <div className="absolute -right-3 -bottom-3 w-6 h-6 md:w-16 md:h-16 bg-sky-50 rounded-full group-hover:scale-[5] transition-transform duration-700 -z-10" />
+    <div className="flex-shrink-0 w-36 h-24 md:w-80 md:h-44 bg-white border border-slate-100 rounded-lg md:rounded-2xl p-3 md:p-7 shadow-sm hover:shadow-xl hover:border-[#38bdf8]/50 transition-all duration-500 flex flex-col justify-between hover:-translate-y-2 cursor-pointer mx-2 md:mx-4 group relative overflow-hidden">
+      {/* Background Decorative Element */}
+      <div className="absolute -right-3 -bottom-3 w-8 h-8 md:w-20 md:h-20 bg-sky-50 rounded-full group-hover:scale-[5] transition-transform duration-700 -z-10" />
       
-      <div className="flex flex-col gap-1">
-        <div className="w-3 h-0.5 md:w-8 md:h-1 bg-[#38bdf8] mb-1 md:mb-3 rounded-full shrink-0" />
-        <h3 className="text-[9px] md:text-md font-bold text-slate-800 leading-[1.1] md:leading-tight group-hover:text-[#0284c7] whitespace-normal break-words">
+      <div className="flex flex-col gap-2">
+        {/* Top Accent: Bar + Icon */}
+        <div className="flex justify-between items-start">
+           <div className="w-4 h-0.5 md:w-10 md:h-1.5 bg-[#38bdf8] rounded-full shrink-0" />
+           <Award className="w-3 h-3 md:w-6 md:h-6 text-[#38bdf8] opacity-20 group-hover:opacity-100 transition-opacity" />
+        </div>
+        
+        {/* Title: Increased text size for desktop (text-lg) */}
+        <h3 className="text-[10px] md:text-lg font-black text-slate-800 leading-tight group-hover:text-[#0284c7] whitespace-normal break-words mt-1">
           {cert.title}
         </h3>
       </div>
       
-      <span className="text-[6px] md:text-[10px] font-black text-slate-400 uppercase tracking-tighter md:tracking-wider">
+      {/* Organization: Bolder and slightly larger */}
+      <span className="text-[7px] md:text-xs font-black text-slate-400 group-hover:text-slate-600 uppercase tracking-wider">
         {cert.org}
       </span>
     </div>
@@ -63,22 +71,20 @@ export default function Certificates() {
         </div>
       </div>
 
-      {/* MOBILE VIEW: Single Row (Shown only on small screens) */}
+      {/* MOBILE VIEW */}
       <div className="flex md:hidden overflow-hidden relative">
-        <div className="flex animate-marquee whitespace-nowrap py-2">
+        <div className="flex animate-marquee whitespace-nowrap py-4">
           {[...certs, ...certs].map((cert, i) => (
             <CertificateBox key={`mobile-${i}`} cert={cert} />
           ))}
         </div>
-        <div className="absolute inset-y-0 left-0 w-8 bg-gradient-to-r from-white to-transparent z-10" />
-        <div className="absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-white to-transparent z-10" />
       </div>
 
-      {/* DESKTOP VIEW: Two Rows (Hidden on mobile, flex on md+) */}
-      <div className="hidden md:flex flex-col gap-8">
+      {/* DESKTOP VIEW */}
+      <div className="hidden md:flex flex-col gap-10">
         {/* Row 1 */}
         <div className="flex overflow-hidden relative">
-          <div className="flex animate-marquee whitespace-nowrap py-2">
+          <div className="flex animate-marquee whitespace-nowrap py-4">
             {[...firstRow, ...firstRow].map((cert, i) => (
               <CertificateBox key={`row1-${i}`} cert={cert} />
             ))}
@@ -89,7 +95,7 @@ export default function Certificates() {
 
         {/* Row 2 */}
         <div className="flex overflow-hidden relative">
-          <div className="flex animate-marquee-reverse whitespace-nowrap py-2">
+          <div className="flex animate-marquee-reverse whitespace-nowrap py-4">
             {[...secondRow, ...secondRow].map((cert, i) => (
               <CertificateBox key={`row2-${i}`} cert={cert} />
             ))}
