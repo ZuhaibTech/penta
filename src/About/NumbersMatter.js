@@ -1,9 +1,9 @@
 export default function NumbersMatter() {
   const stats = [
-    { label: "Active Clients", val: "200+" },
-    { label: "Projects Delivered", val: "500+" },
-    { label: "Skilled Professionals", val: "150+" },
-    { label: "Global Offices", val: "05+" }
+    { label: "Active Clients", val: "10+" },
+    { label: "Projects Delivered", val: "3+" },
+    { label: "Skilled Professionals", val: "25+" },
+    { label: "Global Offices", val: "12+" }
   ];
   return (
     <section className="py-16 bg-white">

@@ -6,18 +6,20 @@ import {
   ShoppingCart, 
   BarChart3, 
   Building2, 
-  Landmark, 
-  Layers 
+  GraduationCap, // Changed from Landmark
+  Layers,
+  Home // Added for Real Estate
 } from "lucide-react";
 
 export default function Industries() {
   const industries = [
-    { title: "Automation", icon: Cpu },
+    { title: "Automotive", icon: Cpu }, // Changed from Automation
     { title: "Health Care", icon: HeartPulse },
     { title: "Retail & eCommerce", icon: ShoppingCart },
     { title: "Marketing & Advertising", icon: BarChart3 },
     { title: "Corporate Enterprises", icon: Building2 },
-    { title: "Financial Institutions", icon: Landmark },
+    { title: "Education", icon: GraduationCap }, // Changed from Financial Institutions
+    { title: "Real Estate", icon: Home }, // Added new box
     { title: "End to End IT Consulting", icon: Layers }
   ];
 
@@ -36,16 +38,14 @@ export default function Industries() {
           </h1>
         </div>
 
-        {/* Professional Compact Grid */}
+        {/* Updated Grid: Now 8 boxes total */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
           {industries.map((item, index) => {
             const Icon = item.icon;
             return (
               <div 
                 key={index} 
-                className={`group relative h-28 md:h-32 rounded-2xl md:rounded-[1.5rem] bg-slate-50 border border-slate-100 transition-all duration-500 hover:bg-[#0284c7] hover:-translate-y-2 overflow-hidden flex flex-col items-center justify-center p-6 cursor-default
-                ${index === 6 ? "sm:col-span-2 lg:col-span-2" : ""}
-                `}
+                className="group relative h-28 md:h-32 rounded-2xl md:rounded-[1.5rem] bg-slate-50 border border-slate-100 transition-all duration-500 hover:bg-[#0284c7] hover:-translate-y-2 overflow-hidden flex flex-col items-center justify-center p-6 cursor-default shadow-sm hover:shadow-xl hover:shadow-blue-100"
               >
                 {/* Icon in Top-Left */}
                 <div className="absolute top-4 left-4">

@@ -11,7 +11,6 @@ export default function Page() {
       <main className="overflow-hidden">
         <CloudHero />
         <CloudFeatures />
-        <CloudContactInfo />
       </main>
       <Footer />
     </>

@@ -13,7 +13,7 @@ export default function HeroSection() {
   const [isDeleting, setIsDeleting] = useState(false);
   const [loopNum, setLoopNum] = useState(0);
   const [typingSpeed, setTypingSpeed] = useState(150);
-  const words = ["PENTACLOUD", "SALESFORCE CONSULTING"];
+  const words = ["SALESFORCE CONSULTING", "ZOHO SERVICE", "WEB DEVELOPMENT", "APP DEVELOPMENT", "DIGITAL MARKETING", "DATA MIGRATION","CONSULTING AND TRAINING"];
 
   useEffect(() => {
     const handleTyping = () => {

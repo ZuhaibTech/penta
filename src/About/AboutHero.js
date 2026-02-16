@@ -48,7 +48,7 @@ export default function AboutHero() {
         {/* Header Section */}
         <div className="relative mb-2 md:mb-4">
           <h2 className="gsap-about-header text-4xl md:text-7xl font-black text-[#0081c2] uppercase tracking-tight">
-            About
+            About US
           </h2>
         </div>
 

@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 
 export default function ContactSection() {
@@ -30,7 +31,7 @@ export default function ContactSection() {
                 PC
               </div>
               <div>
-                <h4 className="font-bold text-slate-900 text-lg">Your Name</h4>
+                <h4 className="font-bold text-slate-900 text-lg">ARSHAD KHAN</h4>
                 <p className="text-[#0284c7] text-[10px] font-black uppercase tracking-widest">
                   Founder & CEO
                 </p>
@@ -38,57 +39,54 @@ export default function ContactSection() {
             </div>
           </div>
 
-          {/* 2. Right Side: Updated Form */}
+          {/* 2. Right Side: Re-edited Form */}
           <div className="bg-slate-50 p-8 md:p-12 rounded-[3rem] border border-slate-100 shadow-sm hover:shadow-xl transition-shadow duration-500">
             <h3 className="text-2xl font-black text-slate-900 mb-8">Start a Project</h3>
             
             <form className="space-y-5">
-              {/* Row 1: Name and Email */}
+              {/* Row 1: First Name and Last Name */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <input 
                   type="text" 
-                  placeholder="Full Name" 
+                  placeholder="First Name" 
                   className="w-full px-6 py-4 rounded-2xl border border-slate-200 focus:outline-none focus:border-[#38bdf8] bg-white transition-colors text-slate-700"
                 />
                 <input 
-                  type="email" 
-                  placeholder="Email Address" 
+                  type="text" 
+                  placeholder="Last Name" 
                   className="w-full px-6 py-4 rounded-2xl border border-slate-200 focus:outline-none focus:border-[#38bdf8] bg-white transition-colors text-slate-700"
                 />
               </div>
 
-              {/* Row 2: Company Name (New) */}
+              {/* Row 2: Email Address */}
               <input 
-                type="text" 
-                placeholder="Company Name" 
+                type="email" 
+                placeholder="Email Address" 
                 className="w-full px-6 py-4 rounded-2xl border border-slate-200 focus:outline-none focus:border-[#38bdf8] bg-white transition-colors text-slate-700"
               />
 
               {/* Row 3: Service Selection */}
-              <select className="w-full px-6 py-4 rounded-2xl border border-slate-200 focus:outline-none focus:border-[#38bdf8] bg-white transition-colors text-slate-500 appearance-none">
-                <option>Select Service</option>
-                <option>Salesforce Consulting</option>
-                <option>Cloud Solutions</option>
-                <option>Web/App Development</option>
-                <option>IT Consulting</option>
-              </select>
-
-              {/* Row 4: File/Image Upload (New) */}
               <div className="relative">
-                <label className="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2 ml-2">
-                  Attach Project Brief/Image (Optional)
-                </label>
-                <input 
-                  type="file" 
-                  className="w-full px-6 py-3 rounded-2xl border border-dashed border-slate-300 bg-slate-100/50 text-slate-500 text-sm file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-xs file:font-black file:bg-[#38bdf8] file:text-white hover:file:bg-[#0284c7] cursor-pointer"
-                />
+                <select className="w-full px-6 py-4 rounded-2xl border border-slate-200 focus:outline-none focus:border-[#38bdf8] bg-white transition-colors text-slate-500 appearance-none cursor-pointer">
+                  <option>Select Service</option>
+                  <option>Salesforce Consulting</option>
+                  <option>Cloud Solutions</option>
+                  <option>Web/App Development</option>
+                  <option>IT Consulting</option>
+                </select>
+                {/* Custom Chevron Arrow for Select */}
+                <div className="absolute inset-y-0 right-6 flex items-center pointer-events-none">
+                  <svg className="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </div>
               </div>
 
-              {/* Row 5: Message */}
+              {/* Row 4: Description Box */}
               <textarea 
                 placeholder="How can we help you?" 
-                rows="4" 
-                className="w-full px-6 py-4 rounded-2xl border border-slate-200 focus:outline-none focus:border-[#38bdf8] bg-white transition-colors text-slate-700"
+                rows="5" 
+                className="w-full px-6 py-4 rounded-2xl border border-slate-200 focus:outline-none focus:border-[#38bdf8] bg-white transition-colors text-slate-700 resize-none"
               ></textarea>
 
               {/* Submit Button */}
