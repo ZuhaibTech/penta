@@ -58,7 +58,7 @@ export default function AboutHero() {
           {/* Left Side */}
           <div className="lg:w-3/5 gsap-about-content">
             <h1 className="text-2xl md:text-5xl font-black text-slate-900 leading-tight">
-              PentaCloud: Your Modern-Day Technology Partner for innovative 
+              Pentacloud: Your Modern-Day Technology Partner for innovative 
               <span className="text-[#0081c2]"> Salesforce solutions</span> and 
               seamless business transformation.
             </h1>
