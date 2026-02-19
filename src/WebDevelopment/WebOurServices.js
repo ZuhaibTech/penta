@@ -1,6 +1,5 @@
 "use client";
 import React from 'react';
-// 1. Import Lucide icons
 import { 
   Cloud, 
   Code2, 
@@ -48,60 +47,77 @@ export default function WebOurServices() {
 
   return (
     <section className="py-12 md:py-24 px-4 md:px-6 bg-[#f8fafc] text-slate-900 overflow-hidden relative">
-      {/* Ambient Decorative Elements */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_50%_0%,rgba(2,132,199,0.05),transparent_50%)] -z-10" />
-      <div className="absolute top-20 right-0 w-96 h-96 bg-blue-100/30 rounded-full blur-[120px] -z-10" />
-      <div className="absolute bottom-0 left-0 w-72 h-72 bg-sky-100/30 rounded-full blur-[100px] -z-10" />
+      {/* Dynamic Background Orbs */}
+      <div className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-sky-200/40 rounded-full blur-[120px] -z-10 animate-pulse" />
+      <div className="absolute bottom-[-10%] right-[-10%] w-[600px] h-[600px] bg-blue-100/50 rounded-full blur-[130px] -z-10" />
 
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12 md:mb-20">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/60 border border-white backdrop-blur-md mb-6 shadow-sm">
-            <Sparkles className="w-3 h-3 text-[#0284c7]" />
-            <span className="uppercase tracking-[0.3em] text-[10px] font-black text-slate-500">Expertise</span>
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/40 border border-white/60 backdrop-blur-xl mb-6 shadow-sm">
+            <Sparkles className="w-3.5 h-3.5 text-[#0284c7]" />
+            <span className="uppercase tracking-[0.3em] text-[10px] font-black text-slate-500">Our Expertise</span>
           </div>
           
-          <h2 className="text-3xl md:text-5xl font-black text-slate-900 tracking-tight">
-            Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0284c7] to-[#38bdf8]">Services.</span>
+          <h2 className="text-3xl md:text-6xl font-black text-slate-900 tracking-tight leading-tight">
+            Our <span className="text-[#0284c7] relative">Services
+              <span className="absolute bottom-2 left-0 w-full h-3 bg-sky-200/30 -z-10" />
+            </span>
           </h2>
-          <p className="mt-4 text-slate-500 text-xs md:text-base max-w-2xl mx-auto leading-relaxed">
-            We provide a comprehensive suite of digital solutions designed to help 
-            modern businesses thrive in an ever-evolving technological landscape.
+          <p className="mt-6 text-slate-500 text-sm md:text-lg max-w-2xl mx-auto leading-relaxed font-medium">
+            Next-generation digital solutions designed to propel <br className="hidden md:block" />
+            modern enterprises into the future.
           </p>
         </div>
 
-        {/* Glass Box Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        {/* Glass Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {ourServices.map((service, i) => (
             <div 
               key={i} 
-              className="group relative bg-white/40 backdrop-blur-xl p-6 md:p-10 rounded-[2.5rem] border border-white/80 hover:border-blue-200 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgba(2,132,199,0.08)] transition-all duration-500 flex flex-col justify-between overflow-hidden"
+              className="group relative flex flex-col p-8 md:p-10 rounded-[3rem] transition-all duration-700
+                         bg-white/30 backdrop-blur-2xl 
+                         border border-white/80 border-b-white/20
+                         shadow-[0_20px_50px_rgba(0,0,0,0.04)] 
+                         hover:shadow-[0_40px_80px_rgba(2,132,199,0.12)] 
+                         hover:-translate-y-2 overflow-hidden"
             >
-              {/* Glass Inner Glow Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-br from-white/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+              {/* Internal Glass Shine */}
+              <div className="absolute inset-0 bg-gradient-to-br from-white/60 via-transparent to-white/10 opacity-100 pointer-events-none" />
               
-              {/* Mesh Accent */}
-              <div className="absolute -right-10 -top-10 w-32 h-32 bg-blue-100/20 rounded-full blur-3xl group-hover:bg-[#0284c7]/10 transition-colors duration-500" />
-              
+              {/* Interactive Glow Orb */}
+              <div className="absolute -right-4 -top-4 w-24 h-24 bg-[#0284c7]/5 rounded-full blur-2xl group-hover:bg-[#0284c7]/20 transition-all duration-700" />
+
               <div className="relative z-10">
-                {/* Icon Container with Glass Lift */}
-                <div className="w-12 h-12 md:w-16 md:h-16 bg-white rounded-2xl shadow-sm border border-slate-100 flex items-center justify-center mb-6 group-hover:bg-[#0284c7] group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
-                  <service.icon 
-                    className="w-6 h-6 md:w-8 md:h-8 text-[#0284c7] group-hover:text-white transition-colors duration-300" 
-                    strokeWidth={1.5}
-                  />
+                {/* Icon Glass Container */}
+                <div className="relative w-14 h-14 md:w-20 md:h-20 mb-8">
+                    {/* The "Aura" behind the icon */}
+                    <div className="absolute inset-0 bg-[#0284c7] rounded-2xl blur-xl opacity-0 group-hover:opacity-20 transition-opacity duration-500" />
+                    
+                    <div className="relative w-full h-full bg-white/80 backdrop-blur-md rounded-2xl border border-white flex items-center justify-center shadow-sm group-hover:shadow-xl group-hover:scale-110 group-hover:-rotate-3 transition-all duration-500">
+                        <service.icon 
+                            className="w-7 h-7 md:w-10 md:h-10 text-[#0284c7]" 
+                            strokeWidth={1.5}
+                        />
+                    </div>
                 </div>
                 
-                <h3 className="text-lg md:text-2xl font-black text-slate-800 mb-3 group-hover:text-[#0284c7] transition-colors tracking-tight">
+                <h3 className="text-xl md:text-2xl font-black text-slate-800 mb-4 group-hover:text-[#0284c7] transition-colors">
                   {service.title}
                 </h3>
                 
-                <p className="text-sm md:text-base text-slate-500 leading-relaxed group-hover:text-slate-700 transition-colors">
+                <p className="text-slate-500 leading-relaxed text-sm md:text-base font-medium">
                   {service.desc}
                 </p>
               </div>
 
-              <div className="relative z-10 mt-8 flex items-center gap-2 text-[#0284c7] font-bold text-[10px] md:text-xs uppercase tracking-[0.2em] translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                View Details <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
+              {/* Glass Button Footer */}
+              <div className="relative z-10 mt-10 pt-6 border-t border-white/40">
+                <button className="flex items-center gap-2 text-[#0284c7] font-bold text-xs uppercase tracking-widest group/btn">
+                  <span>Explore Service</span>
+                  <div className="w-6 h-6 rounded-full bg-sky-100 flex items-center justify-center group-hover/btn:bg-[#0284c7] group-hover/btn:text-white transition-all">
+                    <ArrowRight size={14} />
+                  </div>
+                </button>
               </div>
             </div>
           ))}

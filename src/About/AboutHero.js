@@ -89,7 +89,7 @@ export default function AboutHero() {
           
           {/* Glassmorphism Overlay */}
           <div className="absolute bottom-6 left-6 max-w-sm p-6 bg-white/80 backdrop-blur-md rounded-2xl border border-white/50 shadow-xl hidden md:block">
-            <h4 className="text-[#0081c2] font-black text-xl mb-1">PentaCloud</h4>
+            <h4 className="text-[#0081c2] font-black text-xl mb-1">Pentacloud</h4>
             <p className="text-slate-700 text-sm font-medium leading-snug">
               // Your Modern-Day Technology Partner <br />
               Expert Salesforce implementation & global strategy.
